@@ -67,8 +67,8 @@ void *baby_fun(void * baby){
         if (pot_count == pot_num){
             pot_count=0;
             sem_wait(&CS_mutex);
-            printf(YELLO("\t\t\t\tBaby crow %d found all pots empty!!   So awaked Mother.\n"),tmp->which_crow);
-            printf(YELLO("\t\t\t\tMother crow is awake by baby crow %d and started prepairing food . . .\n"),tmp->which_crow);
+            printf(YELLO("\t\t\t\tBaby crow %d found all pots empty!! So woke Mother up..\n"),tmp->which_crow);
+            printf(YELLO("\t\t\t\tMother crow is awaked by baby crow %d and start preparing food . . .\n"),tmp->which_crow);
             sem_post(&mom_awake);
             sem_post(&CS_mutex);
         }
@@ -106,7 +106,7 @@ void *mom_fun(void *argv){
         printf(YELLO("\t\t\t\tMother crow says" RED("'feeding (%d)' \n")),mom_age);
         sem_post(&CS_mutex);
     }
-    printf(RED("\n\n\t\t\t\tMother crow retires after seving %d feedings.  GAME ENDS!!!!\n"),mom_age);  
+    printf(RED("\n\n\t\t\t\tMother crow retires after serving %d feedings.  GAME ENDS!!!!\n"),mom_age);  
     return NULL;  
 }
 
